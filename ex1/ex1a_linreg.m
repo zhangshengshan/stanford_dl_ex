@@ -43,7 +43,7 @@ theta = rand(n,1);
 % in linear_regression.m
 %
 tic;
-options = struct('MaxIter', 200);
+options = struct('MaxIter', 200,'useMex',0);
 theta = minFunc(@linear_regression, theta, options, train.X, train.y);
 fprintf('Optimization took %f seconds.\n', toc);
 
@@ -81,9 +81,9 @@ plot_prices=true;
 if (plot_prices)
   [actual_prices,I] = sort(actual_prices);
   predicted_prices=predicted_prices(I);
-  plot(actual_prices, 'rx');
+  plot(actual_prices, 'ro');
   hold on;
-  plot(predicted_prices,'bx');
+  plot(predicted_prices,'bo');
   legend('Actual Price', 'Predicted Price');
   xlabel('House #');
   ylabel('House price ($1000s)');
