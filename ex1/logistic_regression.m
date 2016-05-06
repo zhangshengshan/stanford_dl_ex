@@ -1,3 +1,4 @@
+function [f,g] = logistic_regression(theta, X,y)
   %
   % Arguments:
   %   theta - A column vector containing the parameter values to optimize.
