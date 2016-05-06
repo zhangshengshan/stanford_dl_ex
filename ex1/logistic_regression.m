@@ -24,12 +24,12 @@ function [f,g] = logistic_regression(theta, X,y)
 %%% YOUR CODE HERE %%%
 
 sum = 0.0;
-for i=1:size(theta)
+for i=1:size(theta,1)
    sum += y(i)*log(h_func(theta,X(:,i))) + (1 - y(i))*log(1 - h_func(theta,X(:,i)));
 end
 f = -sum;
 
-for j=1:size(theta)
+for j=1:size(theta,1)
     for i=i:m
         g(j)+= X(j,i)*(h_func(theta,X(:,i))-y(i));
     end
